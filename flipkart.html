@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="../src/flipkart.css"> -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Times;
+            font-size: 16px;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            background-color: rgb(228, 233, 241);
+            align-items: center;
+            padding: 10px;
+        }
+
+        .flipkart {
+            font-size: 30px;
+            font-weight: 800;
+            cursor: pointer;
+            color: rgb(26, 147, 253);
+
+        }
+
+        .flipkart:hover {
+            font-size: 30px;
+            color: yellow;
+
+        }
+
+        .search {
+            padding: 10px;
+            border-radius: 8px 0px 0px 8px;
+            border: 0px;
+        }
+
+        button {
+            padding: 0px 10px;
+            height: 38px;
+            border-radius: 0px 8px 8px 0px;
+            border: 0px;
+        }
+
+        .login {
+            background-color: rgb(255, 255, 255);
+            color: rgb(18, 137, 240);
+            font-weight: 700;
+            border: 2px solid rgb(41, 77, 255);
+            padding: 8px 20px;
+            border-radius: 8px;
+        }
+
+        .login:hover {
+            background-color: rgb(41, 77, 255);
+            color: rgb(255, 255, 255);
+            border-radius: 8px;
+            font-weight: 700;
+            box-sizing: border-box;
+            padding: 8px 20px;
+        }
+
+        .bas {
+            font-weight: 500;
+        }
+
+        .header-bottom {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding-left: 10px 20px 0px 20px;
+            list-style: none;
+
+        }
+
+        nav ul li {
+            margin-left: 32px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+        }
+
+        .phone {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+
+        }
+
+        .phoneshow-case {
+            display: flex;
+
+        }
+
+        .mini-pic {
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        .mini-pic span {
+            /* border: 1px solid gray; */
+            padding: 0px 10px 10px 0px;
+            border-radius: 2px;
+        }
+
+        .mini {
+            height: 60px;
+            width: 60px;
+        }
+
+        .image_heart {
+            display: flex;
+            align-items: top;
+
+        }
+
+        .main-img {
+            margin-right: 20px;
+            height: 100%;
+            width: 80%;
+        }
+
+        .bi-heart-fill {
+            background-color: #b2b2b2;
+            color: white;
+            font-size: 22px;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px;
+            height: 40px;
+            width: 40px;
+            box-shadow: 1px 2px 8px gray;
+        }
+
+        .image_button {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .button .bi-cart-fill {
+            background-color: rgb(229, 154, 34);
+            border-radius: 2px;
+            padding: 20px 25px 20px 25px;
+            font-size: 14px;
+            font-weight: 500;
+            color: aliceblue;
+            height: 50px;
+            text-align: center;
+            margin-right: 15px;
+            width: 180px;
+
+        }
+
+        .bi-lightning-fill {
+            background-color: chocolate;
+            border-radius: 2px;
+            padding: 20px 30px 20px 30px;
+            font-size: 14px;
+            font-weight: 500;
+            color: aliceblue;
+            height: 50px;
+            text-align: center;
+            width: 180px;
+        }
+
+        footer {
+            height: 400px;
+            background-color: black;
+        }
+
+        .detail div {}
+
+        .breadcrum span {
+            font-size: 13px;
+            color: #bbbbbb;
+        }
+
+        .Head-title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #101010;
+            margin-bottom: 0px;
+        }
+
+        .Rating {
+            font-size: 12px;
+            font-weight: 600;
+            color: #717171;
+        }
+
+        .bi-star-fill {
+            color: goldenrod;
+        }
+
+        .rating-num {
+            font-weight: 400;
+        }
+
+        .flipkart-assured {
+            margin-left: 10px;
+            border-radius: 0px 4px 10px 4px;
+            background-color: yellow;
+        }
+
+        .F {
+            background-color: blue;
+            padding: 2px 5px 2px 5px;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            color: white;
+        }
+
+        .ass {
+
+
+            padding: 2px 5px 2px 5px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <ul class="header-top">
+            <li class="flipkart">Flipkart</li>
+            <li>
+                <form action=""><input type="text" size="50" name="Head-Search" placeholder="Search" class="search">
+                    <button><span class="bi bi-search"></span></button>
+                </form>
+            </li>
+            <li class="login">Login</li>
+            <li class="bas">Become a Seller</li>
+            <li class="more"> More &nbsp; <Span class="bi bi-chevron-down"></Span></li>
+            <li class="cart"><span class="bi bi-cart-fill"> Cart</span></li>
+        </ul>
+
+        <nav>
+            <ul class="header-bottom">
+                <li>Electronic <span class="bi bi-chevron-down"></span></li>
+                <li>TV&Appliences <span class="bi bi-chevron-down"></span></li>
+                <li>Men <span class="bi bi-chevron-down"></span></li>
+                <li>Women <span class="bi bi-chevron-down"></span></li>
+                <li>Baby & Kids <span class="bi bi-chevron-down"></span></li>
+                <li>Home & Furniture <span class="bi bi-chevron-down"></span></li>
+                <li>Sports,Books And More <span class="bi bi-chevron-down"></span></li>
+                <li>Flights </li>
+                <li>Offer Zone</li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="phone">
+
+            <div class="phoneshow-case">
+                <div class="mini-pic">
+                    <span> <img src="./image/iphone.jpg" alt="" class="mini"></span>
+                    <span> <img src="./image/iphone.jpg" alt="" class="mini"> </span>
+                    <span> <img src="./image/iphone.jpg" alt="" class="mini"></span>
+                    <span> <img src="./image/iphone.jpg" alt="" class="mini"></span>
+                </div>
+                <div class="image_button">
+                    <div class="image_heart">
+                        <img src="./image/iphone.jpg" alt="Man" class="main-img">
+                        <span class="bi bi-heart-fill"></span>
+                    </div>
+                    <div class="button">
+                        <button class="bi bi-cart-fill">&nbsp; ADD TO CART</button>
+                        <button class="bi bi-lightning-fill">&nbsp; BUY NOW</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="detail">
+            <div class="breadcrum">
+                <span>Home</span>
+                <span class="bi bi-chevron-right"></span>
+                <span>Mobile&Acc...</span>
+                <span class="bi bi-chevron-right"></span>
+                <span>Mobile</span>
+                <span class="bi bi-chevron-right"></span>
+                <span>Apple Mobile</span>
+                <span class="bi bi-chevron-right"></span>
+                <span>Mobile Phone...</span>
+            </div>
+            <div>
+                <h1 class="Head-title">Apple iPhone 14 Plus (Starlight, 128 GB)</h1>
+
+                <div class="Rating">
+                    <span class="rating-star"> 4.3 &nbsp<Span class="bi bi-star-fill"></Span></span>
+                    <span class="rating-num">65,000 Ratings & 3,846Reviews</span>
+                    <span class="flipkart-assured"><span class="F">F</span><span class="ass">Assured</span></span>
+                </div>
+                <div class="extra-off"><span>Extra ₹19901 off</span></div>
+            </div>
+            <div class="price mb-4">
+                <span class="current-price h2">₹59,999</span>
+                <span class="del-price text-decoration-line-through mb-4">₹79,900</span>
+                <span class="off-detail">24% off <span class="bi bi-info-circle"></span></span>
+            </div>
+            <div>
+                <ul class="offer-ol list-unstyled">
+                    <li class="mb-2 "> <span class="bi bi-tag-fill "></span> <b>Bank Offer</b> 5% Cashback on Flipkart
+                        Axis Bank
+                        Card<span class="tac">T&C</span>
+                    </li>
+                    <li class="mb-2 "> <span class="bi bi-tag-fill"></span> <b>Bank Offer</b> 10% instant discount on
+                        SBI Credit Card
+                        Transactions, up to ₹750 on orders of ₹5,000
+                        and above<span class="tac">T&C</span></li>
+                    <li class="mb-2 "> <span class="bi bi-tag-fill"></span> <b>Bank Offer</b> 10% instant discount on
+                        SBI Credit Card
+                        EMI
+                        Transactions, up to ₹1,250 on orders of
+                        ₹5,000 and above<span class="tac">T&C</span></li>
+                    <li class="mb-2 "> <span class="bi bi-tag-fill"></span> <b>SpeciPriceal</b> Get extra ₹19901 off
+                        (price inclusive
+                        of
+                        cashback/coupon) <span class="tac">T&C</span></li>
+                    <li class="mb-2 "><span class="newoffer text-success"> View 22 more offers</span></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <div></div>
+    </footer>
+</body>
+
+</html>
