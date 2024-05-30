@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="../src/Home.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header,
+        footer {
+            background-color: #000;
+        }
+
+        .Headings {
+            font-family: serif;
+            margin: 30px 0px -10px 0px;
+            font-size: 50px;
+            font-weight: bolder;
+            text-align: center;
+            background: #ffc107;
+            color: #000;
+            padding: 10px 0px 10px 0px;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #fff !important;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+        .profile-img img {
+            max-width: 300px;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s;
+            padding: 5px;
+            background-color: #fff;
+        }
+
+        .profile-img img:hover {
+            transform: scale(1.2);
+            background-color: #ffc107;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            padding: 45px;
+        }
+
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-body .btn {
+            margin-top: auto;
+        }
+
+        footer .bi {
+            font-size: 1.5rem;
+            margin: 0.5rem;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        @media (min-width: 992px) {
+            .profile-container {
+                flex-direction: row;
+            }
+
+            .profile-container .text-container {
+                margin-left: 10px;
+                text-align: left;
+            }
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card-scroll {
+            overflow-y: scroll;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .card-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .card-scroll::-webkit-scrollbar-thumb {
+            background-color: #000;
+            border-radius: 10px;
+        }
+
+        .skillset {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+
+        .skillset img {
+            transition: transform 0.3s;
+        }
+
+        .skillset img:hover {
+            transform: scale(1.2);
+        }
+
+        .contact-form {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .contact-form label {
+            color: #ffc107;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            box-shadow: 0 0 5px #ffc107;
+        }
+
+        .contact-form button {
+            background-color: #ffc107;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #e0a800;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-out {
+            opacity: 1;
+            animation: fadeOut 1.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .scroll-animation {
+            perspective: 1000px;
+            perspective-origin: center center;
+        }
+
+        .scroll-animation .card {
+            opacity: 0;
+            transform: rotateY(-90deg);
+            transform-origin: center left;
+            animation: rotateIn 1s forwards;
+        }
+
+        @keyframes rotateIn {
+            0% {
+                opacity: 0;
+                transform: rotateY(-90deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: rotateY(0);
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        entry.target.classList.remove('fade-out');
+                    } else {
+                        entry.target.classList.add('fade-out');
+                        entry.target.classList.remove('fade-in');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- nav-Bar -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+            <div class="container-fluid px-lg-5 fs-6">
+                <a class="navbar-brand fs-2 align-item-center" href="#">SurajKumar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- hero-section -->
+    <section class="bg-black text-white text-center py-5 fade-in">
+        <div class="container profile-container">
+            <figure class="profile-img mb-4">
+                <img src="./public/Images/DSC_5365.JPG" alt="Suraj">
+            </figure>
+            <div class="text-container">
+                <h1>Suraj Kumar</h1>
+                <p class="h4">UX Designer / Front-End Developer</p>
+                <p class="text-secondary mt-4">Driven UI/UX Designer passionate about crafting seamless digital
+                    experiences. Eager to leverage research and continuous learning to deliver innovative user-centric
+                    solutions. Skilled in Figma, HTML, CSS, Bootstrap, Adobe Suite, and prototyping with a strong
+                    commitment to growth.</p>
+                <div class="d-flex mt-3">
+                    <a href="#" class="btn btn-warning mx-3 w-75">Contact</a>
+                    <a href="./public/Docs/Delhi Ux+Dev (1).pdf" class="btn btn-outline-light mx-3 w-75">Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- skillset -->
+    <h1 class="skillset h3 text-center bg-warning mt-5">SKILLSET</h1>
+    <div class="container  mt-2 skillset bg-white">
+        <div class="card-scroll d-flex flex-wrap justify-content-center align-items-center py-4">
+            <div class="col-md-2 col-6">
+                <img src="./public/Icon/Html.png" width="100" height="100" class="mx-5 my-2">
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="./public/Icon/Bootstrap.jpeg" width="100" height="100" class="mx-5 my-2">
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="./public/Icon/download (3).png" width="100" height="100" class="mx-5 my-2">
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="./public/Icon/download (4).png" width="100" height="100" class="mx-5 my-2">
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="./public/Icon/figma_5968705.png" width="100" height="100" class="mx-5 my-2">
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="./public/Icon/Framer.png" width="100" height="100" class="mx-5 my-2">
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="./public/Icon/github_733609.png" width="100" height="100" class="mx-5 my-2">
+            </div>
+            <div class="col-md-2 col-6">
+                <img src="./public/Icon/miro.png" width="100" height="100" class="mx-5 my-2">
+            </div>
+        </div>
+    </div>
+    <!-- My Projects -->
+    <h1 class="Headings" id="projects">My Projects</h1>
+    <!-- projects -->
+    <section id="Watch" class="py-2">
+        <div class="container scroll-animation">
+            <h2 class="text-center text-white mb-4">Watch Out My Works</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="./public/Icon/Html.png" class="card-img-top" alt="Websites">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Websites</h5>
+                        <p class="card-text">A small web page design using HTML.</p>
+                        <a href="https://github.com/DexterSuraj/webdevelopmet_code.git"
+                            class="btn btn-primary w-100">Visit</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/Icon/figma_5968705.png" class="card-img-top" alt="User Interfaces">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">User Interfaces</h5>
+                        <p class="card-text">Some UI designs created using Figma.</p>
+                        <a href="https://www.figma.com/design/dPcHRdsIKM7eK4Rg6gieRI/Evol-Backers?node-id=0-1&t=cq2Z9xPfw2AeGg9q-1"
+                            class="btn btn-primary w-100">Visit</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/Icon/css-3_732190.png" class="card-img-top" alt="Front-End">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Front-End</h5>
+                        <p class="card-text">Projects using CSS frameworks like Bootstrap.</p>
+                        <a href="https://github.com/DexterSuraj/Prettify-Audio" class="btn btn-primary w-100">Visit</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./public/Icon/Framer.png" class="card-img-top" alt="Framer Prototypes">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Framer Prototypes</h5>
+                        <p class="card-text">Prototypes designed with Framer.</p>
+                        <a href="#" class="btn btn-primary w-100">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact -->
+    <section id="contact" class="py-5 bg-black">
+        <div class="container text-white">
+            <h2 class="text-center text-white mb-4">Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-control bg-light" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control bg-light" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control bg-light" rows="4"
+                                placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="text-center text-white bg-black p-4">
+        <p>&copy; 2024 Suraj Kumar. All rights reserved.</p>
+        <div>
+            <a href="https://www.behance.net/e0d816af" class="text-white mx-2"><i class="bi bi-behance"></i></a>
+            <a href="www.linkedin.com/in/suraj-kumar-489ab9242" class="text-white mx-2"><i
+                    class="bi bi-linkedin"></i></a>
+            <a href="#" class="text-white mx-2"><i class="bi bi-github"></i></a>
+        </div>
+        <div class="mt-3">
+            <h5>Contact Info</h5>
+            <p>Email: surajkumar@example.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+    </footer>
+</body>
+
+</html>
