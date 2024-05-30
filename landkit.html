@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAndkit</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        header {
+            justify-content: space-around;
+            display: flex;
+            padding: 20px;
+            font-size: 20px;
+            align-items: center;
+        }
+
+        .brand-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px;
+            color: blue;
+            font-weight: 800;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        nav span:hover {
+            border-bottom: 3px solid blue;
+        }
+
+        nav span {
+            margin-left: 55px;
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: rgb(58, 58, 134);
+        }
+
+        .bi-cart {
+            background: blue;
+            border-radius: 5px;
+            padding: 10px;
+            color: aliceblue;
+            width: 100px;
+            text-align: center;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+        }
+
+        .title {
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        section {
+            margin-left: 100px;
+
+        }
+
+        .sub-title {
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .define {
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 10px;
+            color: rgb(148, 148, 148);
+        }
+
+        .hero {
+            padding-top: 50px;
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin-top: 50px;
+        }
+
+        .button {
+            margin-top: 40px;
+            margin-left: 120px;
+        }
+
+        .btn-1 {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 30px;
+            padding-right: 30px;
+            color: aliceblue;
+            background-color: blue;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .btn-2 {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            color: rgb(0, 0, 0);
+            border: 1px solid rgb(0, 0, 0);
+            margin-left: 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* you cant put width and heights for <span> to change span style do " display-inline-block" and set height and width */
+        /* .circle {
+            background: blue;
+            height: 100px;
+            width: 100px;
+            border-radius: 100px;
+            border: 1px solid black;
+        } */
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <span class="brand-title">Landkit.</span>
+        </div>
+        <nav>
+            <span>Landing</span>
+            <span>Pages</span>
+            <span>Account</span>
+            <span>Documentation</span>
+        </nav>
+        <div class="bi bi-cart">
+            Buy now
+        </div>
+    </header>
+    <!-- <div class="circle">
+    </div> -->
+    <Section>
+
+        <div class="img">
+            <figure>
+                <img src="./image/landkitbg.jpeg" alt="" height="50%" width="50%" align="right">
+                <figcaption></figcaption>
+            </figure>
+        </div>
+        <div class="hero">
+            <span class="title">Welcome to Landkit.</span>
+            <span class="sub-title">Develop anything.</span>
+            <span class="define">Build a beautiful, modern website with flexible Bootstrap components built from
+                scratch.</span>
+        </div>
+
+    </Section>
+
+    <div class="button">
+        <span class="btn-1">View all pages <span class="bi bi-arrow-right"></span></span>
+        <span class="btn-2">Documentation</span>
+    </div>
+
+</body>
+
+</html>
