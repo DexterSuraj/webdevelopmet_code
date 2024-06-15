@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUICK</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/js/bootstrap.bundle.js">
+    <script type="text/javascript">
+        function bodyload() {
+            result = confirm("Wellcome \n Completed");
+            if (result == true) {
+                alert("deleted");
+            }
+        }
+    </script>
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: 'Lucida Sans', sans-serif;
+        color: aliceblue;
+
+    }
+
+    body {
+        background: #08021b;
+    }
+
+    .Nav-list {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .Nav-list li {
+        margin: 20px;
+        cursor: pointer;
+    }
+
+    .Nav-list li:hover {
+        color: steelblue;
+        transform: scale(1.2, 1.2);
+    }
+
+    .Brand-name {
+        color: aliceblue;
+    }
+
+    .Brand-name:hover {
+        transform: matrix(1.1, -0.05, 0, 1.2, 0, 0);
+        color: rgb(185, 196, 255);
+    }
+
+    .signin {
+        margin: 20px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .buynow {
+        margin: 10px 0px 25px 0px;
+        color: #08021b;
+        background-color: rgba(255, 255, 255, 1);
+        font-weight: 700;
+    }
+
+    .buynow:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #08021b;
+    }
+
+    .bi-cart2 {
+        color: #08021b;
+        font-weight: 600;
+    }
+
+    .Eyebrow {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+        font-weight: 900;
+    }
+
+    .hero-subtitle {
+        font-size: 42px;
+        font-weight: 400;
+        color: rgb(3, 167, 218);
+        margin-bottom: 25px;
+    }
+
+    .hero-des {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 50px;
+        font-family: 'Lucida Sans', sans-serif;
+    }
+
+    .purchase-quick {
+        font-weight: 500;
+        padding: 10px 25px;
+    }
+
+    .bi-arrow-right {
+        color: #08021b;
+    }
+
+    .learn-more {
+        font-weight: 500;
+        margin-left: 25PX;
+        padding: 10px 25px;
+    }
+
+    .arrow {
+        color: #08021b;
+        font-weight: 900;
+    }
+
+    .img-small {
+        position: absolute;
+        z-index: 1;
+        left: -00px;
+        top: 300px;
+        border-radius: 5px;
+        box-shadow: 2px -4px 10px rgba(70, 70, 70, 0.3);
+    }
+
+    .img-small:hover {
+        transform: scale(1.1, 1.1);
+        z-index: 1;
+
+    }
+
+    .img-big:hover {
+        transform: scale(1.1, 1.1);
+        z-index: 1;
+    }
+
+    .img-big {
+        position: absolute;
+        z-index: 0;
+        left: 100px;
+        border-radius: 5px;
+    }
+
+    .comp {
+        margin-top: 100px;
+    }
+
+    .face-group {
+        display: flex;
+        justify-content: center;
+        transform: translate(30px, 10px);
+        width: 410px;
+    }
+
+    .face {
+        background-image: url(../Public/image/img1_.jpg);
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-size: cover;
+
+    }
+
+    .face1 {
+        background-image: url(../Public/image/img4.jpg);
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        transform: translate(-30px);
+        background-size: cover;
+    }
+
+    .face2 {
+        background-image: url(../Public/image/img3.jpg);
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        transform: translate(-60px);
+        background-size: cover;
+    }
+
+    .face3 {
+        background-image: url(../Public/image/img4.jpg);
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        transform: translate(-90px);
+        background-size: cover;
+    }
+
+    .face4 {
+        background-image: url(../Public/image/img2.jpg);
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        transform: translate(-120px);
+        background-size: cover;
+    }
+
+    .face5 {
+        background-image: url(../Public/image/img3.jpg);
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        transform: translate(-150px);
+        background-size: cover;
+    }
+
+    .face6 {
+        background-image: url(../Public/image/img2.jpg);
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        transform: translate(-180px);
+        background-size: cover;
+    }
+
+    .bi-list {
+        font-size: 35px;
+        display: none;
+    }
+</style>
+
+<body class="container-fluid">
+    <header>
+
+        <nav class="d-flex  justify-content-around pt-4">
+            <div class="Brand-name h1">Quick.</div>
+            <div class="nav">
+                <ul class="Nav-list list-unstyled">
+                    <li>Overview</li>
+                    <li>Landing</li>
+                    <li>Pages</li>
+                    <li>App</li>
+                    <li>Docs</li>
+                </ul>
+            </div>
+            <div class="Btn-Enroll d-flex">
+                <div class="btn p-0 signin ">Sign in</div>
+                <div class="btn align-content-center buynow bi bi-cart"> Buy now</div>
+            </div>
+            <div class="bi bi-list "></div>
+        </nav>
+
+    </header>
+    <section class="d-flex container-fluid border-top p-5 ">
+
+        <div class="left-side position-relative p-5 mt-5">
+            <div class=" text-left Eyebrow">- Build like a Pro</div>
+            <div class="hero-title text-left ">A better way</div>
+            <div class=" text-left hero-subtitle">to build websites.</div>
+            <div class=" text-left hero-des">
+                <Pre class="hero-des">Build a beautiful, modern website with flexible components 
+and modular pages built from scratch.</Pre>
+            </div>
+            <div>
+
+                <button class="btn btn-primary  purchase-quick">Purchase Quick</button>
+                <button class="btn btn-light learn-more ">Learn more <span class="bi bi-arrow-right"></span></button>
+            </div>
+            <div>
+                <div class="comp">Compatible with:</div>
+                <div class="face-group">
+                    <div class="container face "></div>
+                    <div class="container face1 "></div>
+                    <div class="container face2 "></div>
+                    <div class="container face3 "></div>
+                    <div class="container face4 "></div>
+                    <div class="container face5 "></div>
+                    <div class="container face6 "></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="right-side position-relative">
+
+            <img class="img-small" src="./image/Quick_imgS.jpg" alt="small" width="200">
+            <img class="img-big" src="./image/Quick_imgL.jpg" alt="big" width="540">
+
+        </div>
+    </section>
+</body>
+
+</html>
